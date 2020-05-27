@@ -1,0 +1,10 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kaan Karakaya <yusufkaan142@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^3.1.0"
+  }
+}
