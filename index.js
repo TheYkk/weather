@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
     args: ['--no-sandbox']
   });
   const page = await browser.newPage();
-  await page.goto('https://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?il=Elazig');
+  await page.goto('https://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx?il=Elazig',{waitUntil: 'networkidle2'});
   
   let element  = await page.$("#pages > div > section > div.anlik-durum > div.anlik-sicaklik > div.anlik-sicaklik-deger.ng-binding");
   const derece = await page.evaluate(element => element.textContent, element);
