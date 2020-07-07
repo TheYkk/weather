@@ -17,8 +17,9 @@
                     {{ __('You are logged in!') }}
 
                     <form method="post" action="">
+                        @csrf
                         <div class="form-group">
-                            <input type="City" class="form-control" id="City" aria-describedby="City" placeholder="City">
+                            <input type="City" name="city" class="form-control" value="{{Auth::user()->city}}" id="City" aria-describedby="City" placeholder="City">
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
