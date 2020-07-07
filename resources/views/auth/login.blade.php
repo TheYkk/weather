@@ -64,6 +64,19 @@
                                 @endif
                             </div>
                         </div>
+                        <hr>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <a href="{{ url('/auth/redirect/google') }}">
+                                    <div class="google-btn">
+                                        <div class="google-icon-wrapper">
+                                            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                                        </div>
+                                        <p class="btn-text"><b>Sign in with google</b></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
