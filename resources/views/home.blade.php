@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,12 +13,16 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
 
                     <form method="post" action="">
                         @csrf
                         <div class="form-group">
+                            <span>Your city: </span>
                             <input type="City" name="city" class="form-control" value="{{Auth::user()->city}}" id="City" aria-describedby="City" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <span>Email time: </span>
+                            <input value="{{Auth::user()->email_time}}" type="time" id="time" name="time">
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
