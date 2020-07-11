@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: homestead
+    image: mariadb:10.5
+    volumes:
+      - maria-volume:/var/lib/mysql
+    networks:
+      - dashboard
+    ports:
+      - 3306:3306
+  phpmyadmin:
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: secret
+      PMA_HOST: mysql
+    image: phpmyadmin/phpmyadmin
+    networks:
+      - dashboard
+    ports:
+      - 9191:80
+volumes:
+    maria-volume:
+
+networks:
+  dashboard:
+    driver: bridge
