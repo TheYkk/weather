@@ -27,13 +27,13 @@ class NewArrivals extends Mailable
      */
     public function build()
     {
-
+    logger($this->new_arrival->body);
         return $this->markdown('emails.newarrivals')
             ->subject($this->new_arrival->title)
             ->from('example@company.com', 'Example Company')
             ->with([
                 'user'=> $this->user,
-                'new_arrival' => $this->new_arrival,
+                'message' => json_decode($this->new_arrival->body),
             ]);
     }
 }

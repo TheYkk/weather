@@ -48,11 +48,11 @@ class HomeController extends Controller
 
             $datetime = new DateTime('tomorrow');
 
-            $newMessage->title = $datetime->format('Y-m-d')." Weather report";
+            $newMessage->title = $datetime->format('Y-m-d')." Weather report for ".$user->city;
             $newMessage->body = "";
             $newMessage->user_id = $user->id;
 
-            $newMessage->date_string = strtotime('+1 min', strtotime($user->email_time));
+            $newMessage->date_string = strtotime('+1 day', strtotime($user->email_time));
 
             $newMessage->save();
         }
